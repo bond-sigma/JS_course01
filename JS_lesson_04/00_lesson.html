@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+<script  type="text/javascript">
+
+    var globalVar = 20;
+
+    function func1() {
+        var var1 = 10;
+
+        var ff = function () {
+            console.log(var1);
+        }
+
+        var gg = function () {
+            var cc = var1 + 110;
+            return cc;
+        }
+
+        return [ff, cc]
+    }
+
+    var resultFromFunc = func1();
+
+    var resultFromFunc = null; // empty the memory
+
+    resultFromFunc();
+
+</script>
+</body>
+</html>

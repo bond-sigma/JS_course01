@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script type="text/javascript">
+
+    function f_outer() {
+        var firstvar = 3;
+
+        return function f_inner() {
+            console.log(firstvar++);
+        }
+    }
+
+    var res = f_outer();
+
+    res();
+    res();
+
+    function threeNames( fName, sName, age) {
+            console.log('start threeNames ');
+        if (typeof fName == "undefined") {
+            console.log('first Name is not defined');
+        } else if (typeof sName == "undefined") {
+            console.log('second Name is not defined');
+        } else if (typeof age == "undefined") {
+            console.log('age is not defined');
+        } else if (typeof age != "number" || age <= 0) {
+            console.log('age is invalid');
+        } else {
+            console.log('First:', fName, 'Second:', sName, 'Age:', age);
+        }
+        res();
+
+    }
+
+        threeNames('Uasya', 'Pietya', 4);
+
+</script>
+</body>
+</html>

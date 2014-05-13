@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>03 lesson</title>
+
+    <script type="text/javascript">
+
+    var arrayN = [ 22, -88, 44, 55, 66, 'line-element1', 77, 11, 'line-element2', 'line-element3' ];
+    var maxMember = minMember = 0;
+
+    for (var index = 0; index < arrayN.length; index++) {
+        if (typeof arrayN[index] == "number"){
+            maxMember = (maxMember < arrayN[index]) ? arrayN[index] : maxMember;
+            minMember = (minMember > arrayN[index]) ? arrayN[index] : minMember;
+        }
+        if (typeof arrayN[index] == "string"){
+            console.log(arrayN[index]);
+        }
+    }
+    console.log('maxMember is',maxMember);
+    console.log('minMember is',minMember);
+
+
+    function maxOfTwo(p1,p2){
+        return (p1>p2)? p1 : p2;
+    }
+    console.log("bigger is", maxOfTwo(10,5));
+
+    function calcThree(value1, value2, action){
+            console.log('start function');
+        if  (value1 <= 0) {
+            console.log('first value is below or equal zero');
+            return 0;
+        } else if (value2 <= 0) {
+            console.log('second value is below or equal zero');
+            return 0;
+        } else if (value1 % 1 != 0 ) {
+            console.log('first value is not integer');
+            return 0;
+        } else if (value2 % 1 != 0) {
+            console.log('second value is not integer');
+            return 0;
+        } else {
+            switch (action) {
+                case 'add':
+                    console.log('1st:', value1, '2nd:', value2, 'operation:', action, 'result is:');
+                    return value1 + value2;
+                case 'minus':
+                    console.log('1st:', value1, '2nd:', value2, 'operation:', action, 'result is:');
+                    return value1 - value2;
+                case 'divide':
+                    console.log('1st:', value1, '2nd:', value2, 'operation:', action, 'result is:');
+                    return value1 / value2;
+                case 'multiply':
+                    console.log('1st:', value1, '2nd:', value2, 'operation:', action, 'result is:');
+                    return value1 * value2;
+            }
+        }
+    }
+    console.log( calcThree(10,20,"add"));
+    console.log( calcThree(10,20.5,"add"));
+    console.log( calcThree(10,-0,"add"));
+    console.log( calcThree(10,20,"divide"));
+    console.log( calcThree(10,20,"minus"));
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
