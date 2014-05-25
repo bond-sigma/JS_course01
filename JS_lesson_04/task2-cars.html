@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>task 2</title>
+    <script type="text/javascript">
+
+        var vehicle = {
+            brand   : 'Audi',
+            type    : 'sedan',
+            sits    : 5,
+            passList: ['John', 'Paul', 'George', 'Ringo'],
+            isMoving: false,
+            addPass : function addPass(newPass){
+                if ( this.isMoving == true ) {
+                    console.log('please stop the car before')
+                } else if (typeof newPass == 'undefined') {
+                    console.log('Please specify name to add');
+                } else if (this.passList.length < this.sits ) {
+                    this.passList.push(newPass);
+                    console.log(newPass, ' is added');
+                } else {
+                    console.log('Sorry, full house...');
+                }
+                console.log('inside the car:', this.passList);
+            },
+            drive   : function () {
+                this.isMoving = true;
+                console.log('car is moving');
+            },
+            stop    : function () {
+                this.isMoving = false;
+                console.log('car is stopped');
+            },
+            removePass : function (nameToRemove) {
+                if ( this.isMoving == true ) {
+                    console.log('please stop the car before')
+                } else if (typeof nameToRemove == 'undefined') {
+                    console.log('Please specify name to push out');
+                } else {
+                    var temp = [];
+                    for ( var i=0; i < this.passList.length; i++ ) {
+                        if (this.passList[i] != nameToRemove ) {
+                            temp.push(this.passList[i]);
+                        } else {
+                            console.log(nameToRemove, ' bye-bye!');
+                        }
+                    }
+                    if (temp.length == this.passList.length ){
+                        console.log( nameToRemove, 'is not found');
+                    }
+                    this.passList = temp;
+                }
+                console.log('inside the car:', this.passList, 'total:',this.passList.length );
+            }
+        };
+
+        //console.log('brand is:', vehicle.brand, 'type is: ', vehicle.type, 'sits: ', vehicle.sits);
+        //vehicle.drive();
+        //vehicle.addPass('Obama');
+        //vehicle.stop();
+        //vehicle.addPass('Baraka');
+        vehicle.addPass('fff');
+        //vehicle.removePass();
+        //vehicle.drive();
+        //vehicle.removePass();
+        //vehicle.stop();
+        //vehicle.removePass('George');
+        vehicle.removePass('John');
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
